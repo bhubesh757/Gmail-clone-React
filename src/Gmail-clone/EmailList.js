@@ -1,5 +1,5 @@
 import { Checkbox  } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 // icons
@@ -22,7 +22,25 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import './EmailList.css'
 import Section from './Section';
 import EmailRow from './EmailRow';
+import { db } from '../firebase';
+
+// Flipmove
+
+import FlipMove from 'react-flip-move';
 function EmailList() {
+
+    const [emails, setemails] = useState([])
+
+    useEffect(() => {
+        db.collection('emails').orderBy('timestamp' , 'desc').
+        onSnapshot(
+            snapshot => setemails (snapshot.docs.map(doc => ({
+                id : doc.id,
+                data : doc.data()
+            })))
+        )
+    }, [])
+
     return (
         <div className = 'emailList'>
             {/* <h1> I am Email List</h1> */}
@@ -61,8 +79,25 @@ function EmailList() {
                 <Section color = 'green' Icon = {LocalOfferIcon} title = 'Promotion'></Section>
             </div>
 
+            
+            <FlipMove>
             <div className="emailList__mailList">
-                  <EmailRow
+            
+
+                {emails.map(({id , data : {
+                    subject , message , timestamp , Recipients
+                }}) => (
+                    <EmailRow
+                    id = {id}
+                    key = {id}
+                    title = {Recipients}
+                    subject = {subject}
+                    description = {message}
+                    time = {new Date (timestamp?.seconds * 1000 ).toUTCString()}
+                    ></EmailRow>
+                ))}
+            
+                  {/* <EmailRow
                   title = 'The Postman Team'
                   subject = 'Hackathon Alert: Announcing the Postman API Hack '
                   description = 'Hack the Future of APIs and Unleash What You Can Do'
@@ -73,8 +108,9 @@ function EmailList() {
                   subject = 'Hackathon Alert: Announcing the Postman API Hack '
                   description = 'Hack the Future of APIs and Unleash What You Can Do'
                   time = '5:54'>
-                  </EmailRow>
+                  </EmailRow> */}
             </div>
+            </FlipMove>
         </div>
     )
 }

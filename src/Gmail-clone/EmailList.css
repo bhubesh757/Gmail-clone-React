@@ -17,10 +17,14 @@
 
 .emailList__section {
     display: flex;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     /* justify-content: space-between; */
     border-bottom: 1px solid whitesmoke;
     background-color: white;
     z-index: 999;
+}
+
+.emailList__mailList {
+    padding-bottom: 20%;
 }
