@@ -10,6 +10,8 @@ styled-components material-ui icons
 
 * #### Online Website : <a href="https://yt-9ec8d.web.app/">Gmail Clone Web</a>
 
+![simplescreenrecorder-2021-01-12_10 13 26](https://user-images.githubusercontent.com/55022929/104270996-c6756080-54bf-11eb-91e2-370548ff8e70.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
