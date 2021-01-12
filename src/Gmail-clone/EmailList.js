@@ -22,7 +22,7 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import './EmailList.css'
 import Section from './Section';
 import EmailRow from './EmailRow';
-import { db } from '../firebase';
+import { db } from './firebase';
 
 // Flipmove
 

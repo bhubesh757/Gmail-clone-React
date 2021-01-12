@@ -10,7 +10,30 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 // header right
 import SettingsIcon from '@material-ui/icons/Settings';
 import AppsIcon from '@material-ui/icons/Apps';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../features/userSlice';
+import { auth } from './firebase';
+// import { useDispatch } from 'react-redux';
 function Header() {
+
+    // importing the image from the google
+    const user = useSelector(selectUser)
+    console.log(user);
+
+    const dispatch = useDispatch()
+
+    console.log('dispatch ', dispatch);
+
+
+    // signout
+
+    const signOut = () => {
+        dispatch(logout());
+        auth.signOut()
+    }
+
+    console.log('signout' , signOut);
+    
     return (
         <div className = 'header'>
             <div className="header__left">
@@ -37,7 +60,7 @@ function Header() {
                     <AppsIcon></AppsIcon>
                 </IconButton>
                 <IconButton>
-                        <Avatar></Avatar>
+                        <Avatar onClick = {signOut} src = {user?.photoUrl} ></Avatar>
                 </IconButton>
             </div>
         </div>

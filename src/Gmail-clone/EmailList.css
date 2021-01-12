@@ -1,13 +1,15 @@
 .emailList {
     flex: 1;
     overflow: scroll;
+
 }
 
 .emailList__settings {
     position: sticky;
     top: 0;
     border-bottom: 1px solid whitesmoke;
-    background-color: white;
+    /* background-color: white; */
+    background: transparent;
     z-index: 999;
     padding-right: 10px;
     display: flex;
@@ -21,8 +23,9 @@
     top: 0;
     /* justify-content: space-between; */
     border-bottom: 1px solid whitesmoke;
-    background-color: white;
+    /* background-color: white; */
     z-index: 999;
+    background-image: url(https://i.redd.it/qwd83nc4xxf41.jpg);
 }
 
 .emailList__mailList {
