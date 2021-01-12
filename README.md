@@ -1,6 +1,15 @@
 # Gmail-clone-React
 Gmail - clone - React js
 
+**React js**  Firebase for deploy 
+🔥 **Firebase** Firestore for database Firebase Google Authentication 
+React Hooks React Context API React Router 
+styled-components material-ui icons
+
+## Live Action
+
+* #### Online Website : <a href="https://yt-9ec8d.web.app/">Gmail Clone Web</a>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
